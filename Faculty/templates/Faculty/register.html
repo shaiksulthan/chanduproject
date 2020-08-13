@@ -1,0 +1,45 @@
+{% extends 'Faculty/mainpage.html' %}
+{% block body %}
+<body class="container">
+	{% if messages %}
+	{% for msg in messages%}
+	{{msg}}
+	{% endfor%}
+	{% endif%}
+	<div class="col-sm-3 bg-dark"></div>
+	<div class="col-sm-6">
+		
+	</div>
+	<div class="col-sm-3 bg-dark"></div>
+	<form action="{% url 'register' %}" method="POST" class="">
+		{% csrf_token%}
+		<table align="center">
+			<th>REGISTRATION FORM</th>
+			<tr>
+				<td><label class="text-success">Name:</label></td>
+				<td><input type="text" name="name" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>Age:</td>
+				<td><input type="number" name="age" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>Branch</td>
+				<td><input type="text" name="branch" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>Phone</td>
+				<td><input type="number" name="phone" class="form-control"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="Email" name="email" class="form-control"></td>
+			</tr>
+			<tr align="center">
+				<td><input type="SUBMIT" name="Register" value="Register"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+{% endblock %}

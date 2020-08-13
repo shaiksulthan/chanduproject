@@ -1,0 +1,42 @@
+{% extends 'Faculty/mainpage.html' %}
+{% block body %}
+
+<body class="container">
+	<div class="col-sm-3 bg-dark"></div>
+	<div class="col-sm-6">
+		
+	</div>
+	<div class="col-sm-3 bg-dark"></div>
+	<form action="{% url 'edit' data.id %}" method="POST" class="">
+		{% csrf_token%}
+		<table align="center">
+			<th>REGISTRATION FORM</th>
+			<tr>
+				<td><label class="text-success">Name:</label></td>
+				<td><input type="text" name="name" class="form-control" value="{{data.Name}}"></td>
+			</tr>
+			<tr>
+				<td>Age:</td>
+				<td><input type="number" name="age" class="form-control" value="{{data.Age}}"></td>
+			</tr>
+			<tr>
+				<td>Branch</td>
+				<td><input type="text" name="branch" class="form-control" value="{{data.Branch}}"></td>
+			</tr>
+			<tr>
+				<td>Phone</td>
+				<td><input type="number" name="phone" class="form-control"
+					value="{{data.Mobile}}"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="Email" name="email" class="form-control" value="{{data.Email}}"></td>
+			</tr>
+			<tr align="center">
+				<td><input type="submit" name="Register" value="Update"></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+{% endblock%}

@@ -1,0 +1,12 @@
+{% extends 'Faculty/mainpage.html'%}
+{% block body%}
+<div class="align-vertically">
+<form action="{% url 'signup' %}" method="POST" align=center class="table">
+	{% csrf_token %}
+	{{ form  }}
+	<input type="submit" value="SUBMIT" name='submit'>
+</form>
+</div>
+
+
+{% endblock%}
